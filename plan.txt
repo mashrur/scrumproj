@@ -1,0 +1,44 @@
+setup product
+
+-- only involves create / updating product
+
+unit tests>
+- you should not be able to create a valid product without a name
+
+create backlog item
+
+-- set the product ref. some name, description, priority. story description, how to validate
+
+unit tests>
+you should not be able to create a valid backlog item without product reference, name, and story
+
+
+sprint setup
+-- start, end times, members, product
+unit test>
+you should not be able to create sprint without start, end, product reference and number of members must be more than zero
+
+add backlog items
+ set sprint ref for backlog items
+ --> unit tests> you should not be able to add backlog item to sprint without priority
+ after adding it to sprint, it should refer to right sprintreference
+ 
+
+task breakdown
+create task
+--- name, description, points, 
+
+task pickup 
+--- update task with member
+
+task update
+add new task update (value type) - description, points achieved
+
+
+
+
+
+
+
+
+view graph
