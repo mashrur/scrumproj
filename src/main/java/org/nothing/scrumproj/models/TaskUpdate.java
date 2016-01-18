@@ -1,5 +1,6 @@
 package org.nothing.scrumproj.models;
 
+
 public class TaskUpdate {
 	private String description;
 	private long pointsAchieved;

@@ -2,7 +2,12 @@ package org.nothing.scrumproj.models;
 
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Task {
+	@Id
 	private long id;
 	private String name;
 	private String description;

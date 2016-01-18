@@ -2,6 +2,9 @@ package org.nothing.scrumproj.models;
 
 import java.util.List;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class BacklogItem {
 	private long id;
 	private String name;

@@ -2,7 +2,12 @@ package org.nothing.scrumproj.models;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Sprint {
+	@Id
 	private long id;
 	private String name;
 	private long productReference;
