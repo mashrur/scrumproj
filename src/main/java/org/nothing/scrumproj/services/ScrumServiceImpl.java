@@ -16,11 +16,8 @@ public class ScrumServiceImpl implements ScrumService {
 	public void registerProduct(String name, String description) {
 		if (name == null)
 			throw new ValidationException("Name must be provided");
-		Product product = new Product();
-		product.setName(name);
-		product.setDescription(description);
-
-		mongoTemplate.save(product, "product");
+		Product product = Product.createProduct(name, description);
+		mongoTemplate.save(product);
 	}
 
 }
