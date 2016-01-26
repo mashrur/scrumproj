@@ -3,12 +3,14 @@ package org.nothing.scrumproj.models;
 import java.math.BigInteger;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Product {
 	@Id
 	private BigInteger id;
+	@Indexed(unique = true)
 	private String name;
 	private String description;
 

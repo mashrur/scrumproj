@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.mongodb.Mongo;
+import com.mongodb.WriteConcern;
 
 @Configuration
 @ComponentScan("org.nothing")
@@ -13,11 +14,13 @@ import com.mongodb.Mongo;
 public class MongoConfig extends AbstractMongoConfiguration {
 	@Override
 	public Mongo mongo() throws Exception {
-		return new Mongo();
+		Mongo mongo = new Mongo();
+		mongo.setWriteConcern(WriteConcern.SAFE);
+		return mongo;
 	}
 
 	@Override
 	protected String getDatabaseName() {
-		return "demo-test";
+		return "est";
 	}
 }

@@ -7,10 +7,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class MainTest {
 
 	public static void main(String[] args) {
+		try{
 		ApplicationContext context = new AnnotationConfigApplicationContext(MongoConfig.class);
 		ScrumService serv = context.getBean(ScrumService.class);
 		serv.registerProduct("testProd", "description");
-		serv.registerProduct("real Prod", "real description");
+		serv.registerProduct("testProd", "real description");
+		}
+		catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}
 
 	}
 
