@@ -4,6 +4,7 @@ setup product
 
 unit tests>
 - you should not be able to create a valid product without a name
+- you should not be able to create more than one products with same name
 
 create backlog item
 
@@ -17,10 +18,7 @@ sprint setup
 -- start, end times, members, product
 unit test>
 you should not be able to create sprint without start, end, product reference and number of members must be more than zero
-
-add backlog items
- set sprint ref for backlog items
- --> unit tests> you should not be able to add backlog item to sprint without priority
+ be able to add backlog item to sprint without priority
  after adding it to sprint, it should refer to right sprintreference
  
 
@@ -33,6 +31,46 @@ task pickup
 
 task update
 add new task update (value type) - description, points achieved
+
+
+user stories
+user will be able to add members
+user will register a product
+user will add some backlogs to that product
+user will initiate a sprint
+user will add/remove some backlogs to that sprint
+user will be able to update a backlog item directly to update the points achieved
+user will break down each backlog into multiple tasks
+user will pick/release a task
+user will do some work and update task accordingly
+--- if a task is updated as complete, partial points will be achieved for the related backlog
+user will update the final status for each backlog item - after watching the demo
+user will review the sprint by adding some realizations
+
+user will be able to drop a sprint
+
+
+logic/constraints:
+when you register a product, at least it should have a (unique) name
+you can't delete a product, if it has any backlog
+you can't delete a backlog if it is part of a sprint
+you can't delete a sprint if it already started [start date]
+
+backlog item cannot be created without a product reference
+you cannot add a backlog item to a sprint, unless it has a priority
+you cannot add a backlog item to a sprint, if there are other backlog items for the same product with more priority not already taken for the sprint
+if a backlog directly updated for points achieved, member must be assigned for it
+must have a member assigned to a task when it is picked or updated with achieved points
+
+altogether points of tasks within a backlog item should not exceed the total points for the backlog
+when updating the points within backlog, it should not allow to update it so that total points become greater than total achieved points
+
+
+
+
+exceptions
+remove backlog item from sprint after sprint has already started
+
 
 
 
