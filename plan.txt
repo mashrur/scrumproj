@@ -48,13 +48,20 @@ user will update the final status for each backlog item - after watching the dem
 user will review the sprint by adding some realizations
 
 user will be able to drop a sprint
+sprints could have following statuses: not started/ active/failed/completed/expired
+it will become completed once all the backlog items are in done status after checking (usually on demo day)
+it will become expired when sprint end date appeared but not all backlog items are in (QA/Demo) passed status
+
+backlog items can have these status: not started, in progress, developed, passed, dropped
+
 
 
 logic/constraints:
 when you register a product, at least it should have a (unique) name
 you can't delete a product, if it has any backlog
 you can't delete a backlog if it is part of a sprint
-you can't delete a sprint if it already started [start date]
+you can't drop a sprint after the end date
+
 
 backlog item cannot be created without a product reference
 you cannot add a backlog item to a sprint, unless it has a priority
@@ -65,11 +72,11 @@ must have a member assigned to a task when it is picked or updated with achieved
 altogether points of tasks within a backlog item should not exceed the total points for the backlog
 when updating the points within backlog, it should not allow to update it so that total points become greater than total achieved points
 
+you cannot delete a backlog item from sprint after sprint has already started
+s task/backlog item cannot be changed once it is hundred percent complete and sprint is in done or failed status (instead of active status)
 
-
-
-exceptions
-remove backlog item from sprint after sprint has already started
+a backlog item can be re-assigned to a new sprint if earlier sprint was failed
+in that case, all the task and updates will remain.. 
 
 
 

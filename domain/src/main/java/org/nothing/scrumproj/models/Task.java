@@ -2,27 +2,14 @@ package org.nothing.scrumproj.models;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
 public class Task {
-	@Id
-	private long id;
 	private String name;
 	private String description;
 	private long points;
 	private long memberReference;
 	private List<TaskUpdate> taskUpdates;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
+	
 	public String getName() {
 		return name;
 	}
